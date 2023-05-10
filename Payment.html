@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html" id="logo">
+            My E-Commerce Website
+           
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span><img src="./images/menu.png" alt="" width="30px"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Product</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Category
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: white;">
+                  <li><a class="dropdown-item" href="#">WomenWear</a></li>
+                  <li><a class="dropdown-item" href="#">MenWear</a></li>
+                  <li><a class="dropdown-item" href="#">Watches</a></li>
+                  <li><a class="dropdown-item" href="#">Shoes</a></li>
+                  <!-- <li><a class="dropdown-item" href="#">KidsWear</a></li>
+                  <li><a class="dropdown-item" href="#">WinterWear</a></li> -->
+                  <li><a class="dropdown-item" href="#">Glasses</a></li>
+                 
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about_us.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact_us.html">Contact</a>
+              </li>
+            </ul>
+            <form class="d-flex" id="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <div class="container mt-5 d-flex justify-content-center">
+
+        <div class="card p-4" style="box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);">
+    
+            <div class="d-flex justify-content-between align-items-center">
+    
+                <h5 class="total-amount">Total amount</h5>
+                <div class="amount-container"><span class="amount-text"><span class="dollar-sign">$</span>375</span></div>
+                    
+            </div>
+    
+    
+            <div class="pt-4">
+                <label class="d-flex justify-content-between"> <span class="label-text label-text-cc-number">CARD NUMBER</span><img src="https://img.icons8.com/dusk/64/000000/visa.png" width="30" class="visa-icon" /></label>
+                <input type="tel" name="credit-number" class="form-control credit-card-number" maxlength="19"  placeholder="Card number">
+            </div>
+    
+    
+            <div class="d-flex justify-content-between pt-4">
+                
+                <div>
+                    <label><span class="label-text">EXPIRY</span>	</label>
+                    <input type="date" name="expiry-date" class="form-control expiry-class" placeholder="MM / YY">
+            
+                </div>
+    
+                <div>
+                    <label><span class="label-text py-5">CVV</span></label>
+                    <input type="tel" name="cvv-number" class="form-control cvv-class" maxlength="4" pattern="\d*">
+                
+                </div>
+
+             
+            </div>
+    
+    
+    
+            <div class="d-flex justify-content-between pt-5 align-items-center">
+                
+                <button type="button" id="cancel" class="btn cancel-btn">Cancel</button>
+    
+                <button type="button" id="confirm" class="btn payment-btn" onclick="confirmOrder()">Confirm Order</button>
+                <script>
+                    function confirmOrder() {
+                        if (!document.getElementById("confirm").disabled) {
+                            if (window.confirm("Are you sure you want to confirm the order?")) {
+                                alert(" Your Order has been confirmed.");
+                            } else {
+                                alert(" Your Order has been cancelled.");
+                            }
+                        } else {
+                            alert("Button is disabled.");
+                        }
+                    }
+                </script>
+                
+    
+            </div>
+            
+    
+    
+    
+        </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
